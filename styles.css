@@ -28,7 +28,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 5%;
+    padding: 0.8rem 5%;
     background-color: white;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     position: fixed;
@@ -40,24 +40,38 @@ body {
 .logo {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 0.8rem;
 }
 
 .logo h1 {
     font-size: 1.5rem;
     color: var(--dark-color);
+    font-weight: 600;
 }
 
 .nav-links {
     display: flex;
     align-items: center;
+    gap: 2rem;
+}
+
+.main-links {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.auth-links {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 }
 
 .nav-links a {
     color: var(--dark-color);
     text-decoration: none;
-    padding: 0.5rem 1rem;
-    margin: 0 0.5rem;
+    font-size: 1rem;
+    font-weight: 500;
     transition: color 0.3s ease;
 }
 
@@ -65,10 +79,54 @@ body {
     color: var(--primary-color);
 }
 
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--dark-color);
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    min-width: 180px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.dropdown-content a {
+    color: var(--dark-color);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--light-color);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
 .login-btn, .signup-btn {
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    transition: all 0.3s ease;
+    padding: 0.5rem 1.2rem;
+    border-radius: 6px;
+    font-weight: 500;
 }
 
 .signup-btn {
@@ -165,6 +223,39 @@ body {
     text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
 }
 
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.cta-primary, .cta-secondary {
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.cta-primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.cta-primary:hover {
+    background-color: var(--secondary-color);
+}
+
+.cta-secondary {
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+}
+
+.cta-secondary:hover {
+    background-color: white;
+    color: var(--dark-color);
+}
+
 /* Features Section */
 .features {
     display: grid;
@@ -199,67 +290,14 @@ body {
     margin: 1rem 0;
 }
 
-/* Recent Trails Section */
-.recent-trails {
-    padding: 4rem 5%;
-}
-
-.recent-trails h2 {
-    text-align: center;
-    margin-bottom: 2rem;
+.feature-card h3 {
+    margin: 1rem;
     color: var(--dark-color);
 }
 
-.trail-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    margin-bottom: 2rem;
-}
-
-.trail-card {
-    background: white;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
-}
-
-.trail-card:hover {
-    transform: translateY(-5px);
-}
-
-.trail-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-}
-
-.trail-info {
-    padding: 1rem;
-}
-
-.trail-stats {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 1rem;
-    color: var(--gray-color);
-}
-
-.view-all-btn {
-    display: block;
-    width: fit-content;
-    margin: 2rem auto;
-    padding: 1rem 2rem;
-    background-color: var(--primary-color);
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-.view-all-btn:hover {
-    background-color: var(--secondary-color);
+.feature-card p {
+    margin: 1rem;
+    color: var(--dark-color);
 }
 
 /* Form Styles */
@@ -318,78 +356,6 @@ body {
 
 .form-container button:hover {
     background-color: var(--secondary-color);
-}
-
-/* Footer Styles */
-footer {
-    background-color: var(--dark-color);
-    color: white;
-    padding: 3rem 5%;
-}
-
-.footer-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-}
-
-.footer-section h3 {
-    margin-bottom: 1rem;
-}
-
-.footer-section ul {
-    list-style: none;
-}
-
-.footer-section ul li {
-    margin-bottom: 0.5rem;
-}
-
-.social-links {
-    display: flex;
-    gap: 1rem;
-}
-
-.social-links a {
-    color: white;
-    font-size: 1.5rem;
-    transition: color 0.3s ease;
-}
-
-.social-links a:hover {
-    color: var(--primary-color);
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .nav-links {
-        display: none;
-    }
-    
-    .hamburger {
-        display: block;
-    }
-    
-    .hero h1 {
-        font-size: 2rem;
-    }
-    
-    .hero p {
-        font-size: 1rem;
-    }
-    
-    .cta-buttons {
-        flex-direction: column;
-        gap: 1rem;
-    }
-    
-    .features {
-        grid-template-columns: 1fr;
-    }
-    
-    .form-container {
-        margin: 100px 1rem 2rem;
-    }
 }
 
 /* Additional Form Styles */
@@ -463,4 +429,80 @@ select {
     border: 1px solid var(--gray-color);
     border-radius: 5px;
     background-color: white;
+}
+
+/* Footer Styles */
+footer {
+    background-color: var(--dark-color);
+    color: white;
+    padding: 3rem 5%;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.footer-section h3 {
+    margin-bottom: 1rem;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+    color: var(--primary-color);
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-links a {
+    font-size: 1.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    
+    .hamburger {
+        display: block;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .features {
+        grid-template-columns: 1fr;
+    }
+    
+    .form-container {
+        margin: 100px 1rem 2rem;
+    }
 }
