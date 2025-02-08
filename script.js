@@ -1,16 +1,14 @@
-// script.js
+/ script.js
 document.addEventListener('DOMContentLoaded', function() {
     // Hamburger Menu Functionality
     const hamburger = document.querySelector('.hamburger');
     const mobileNav = document.querySelector('.mobile-nav');
     const body = document.body;
-
     hamburger.addEventListener('click', function() {
         hamburger.classList.toggle('active');
         mobileNav.classList.toggle('active');
         body.classList.toggle('no-scroll');
     });
-
     // Close mobile nav when clicking outside
     document.addEventListener('click', function(event) {
         if (!hamburger.contains(event.target) && !mobileNav.contains(event.target)) {
@@ -19,7 +17,6 @@ document.addEventListener('DOMContentLoaded', function() {
             body.classList.remove('no-scroll');
         }
     });
-
     // Sample trail data
     const trails = [
         {
@@ -44,7 +41,6 @@ document.addEventListener('DOMContentLoaded', function() {
             image: "https://images.unsplash.com/photo-1583454155184-870a1f63be44"
         }
     ];
-
     // Populate recent trails
     const trailGrid = document.querySelector('.trail-grid');
     if (trailGrid) {
@@ -65,7 +61,6 @@ document.addEventListener('DOMContentLoaded', function() {
             trailGrid.appendChild(trailCard);
         });
     }
-
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
@@ -79,17 +74,14 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
-
 // Form validation
 function validateForm(formId) {
     const form = document.getElementById(formId);
     if (!form) return;
-
     form.addEventListener('submit', function(e) {
         e.preventDefault();
         let isValid = true;
         const inputs = form.querySelectorAll('input[required]');
-
         inputs.forEach(input => {
             if (!input.value.trim()) {
                 isValid = false;
@@ -98,7 +90,6 @@ function validateForm(formId) {
                 input.classList.remove('error');
             }
         });
-
         if (isValid) {
             // Here you would typically send the form data to a server
             console.log('Form submitted successfully');
@@ -106,46 +97,3 @@ function validateForm(formId) {
         }
     });
 }
-
-// Add this to your script.js
-document.addEventListener('DOMContentLoaded', function() {
-    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-    const navWrapper = document.querySelector('.nav-wrapper');
-    const dropdowns = document.querySelectorAll('.dropdown');
-
-    // Toggle mobile menu
-    mobileMenuBtn.addEventListener('click', function() {
-        this.classList.toggle('active');
-        navWrapper.classList.toggle('active');
-        document.body.classList.toggle('no-scroll');
-    });
-
-    // Handle dropdowns in mobile view
-    dropdowns.forEach(dropdown => {
-        const dropBtn = dropdown.querySelector('.dropbtn');
-        dropBtn.addEventListener('click', function(e) {
-            if (window.innerWidth <= 768) {
-                e.preventDefault();
-                dropdown.classList.toggle('active');
-            }
-        });
-    });
-
-    // Close mobile menu when clicking outside
-    document.addEventListener('click', function(e) {
-        if (!navWrapper.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
-            mobileMenuBtn.classList.remove('active');
-            navWrapper.classList.remove('active');
-            document.body.classList.remove('no-scroll');
-        }
-    });
-
-    // Close mobile menu when window is resized above mobile breakpoint
-    window.addEventListener('resize', function() {
-        if (window.innerWidth > 768) {
-            mobileMenuBtn.classList.remove('active');
-            navWrapper.classList.remove('active');
-            document.body.classList.remove('no-scroll');
-        }
-    });
-});
