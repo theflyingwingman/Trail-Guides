@@ -1,15 +1,16 @@
-<!-- index.html -->
+<!-- login.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trail Guides - Share Your Running Routes</title>
+    <title>Login - Trail Guides</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <header>
+        <!-- Same navigation as index.html -->
         <nav class="navbar">
             <div class="logo">
                 <svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
@@ -40,59 +41,48 @@
                 <span></span>
                 <span></span>
             </div>
-            <div class="mobile-nav">
-                <a href="index.html">Home</a>
-                <a href="routes.html">Routes</a>
-                <a href="forum.html">Forum</a>
-                <a href="#">British Columbia</a>
-                <a href="#">Washington</a>
-                <a href="login.html">Login</a>
-                <a href="signup.html">Sign Up</a>
-            </div>
         </nav>
     </header>
 
     <main>
-        <section class="hero">
-            <h1>Discover Local Trail Running Routes</h1>
-            <p>Connect with local runners and find the best trails in BC and Washington</p>
-            <div class="cta-buttons">
-                <a href="signup.html" class="cta-primary">Share Your Routes</a>
-                <a href="routes.html" class="cta-secondary">Find Trails</a>
-            </div>
-        </section>
-
-        <section class="features">
-            <div class="feature-card">
-                <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&q=80" alt="Local Trails">
-                <i class="fas fa-map-marked-alt"></i>
-                <h3>Local Trails</h3>
-                <p>Discover hidden gems from local runners</p>
-            </div>
-            <div class="feature-card">
-                <img src="https://images.unsplash.com/photo-1585257611539-e4e11a13e410?auto=format&fit=crop&q=80" alt="Community">
-                <i class="fas fa-users"></i>
-                <h3>Community</h3>
-                <p>Connect with fellow trail runners</p>
-            </div>
-            <div class="feature-card">
-                <img src="https://images.unsplash.com/photo-1583454155184-870a1f63be44?auto=format&fit=crop&q=80" alt="Strava Integration">
-                <i class="fab fa-strava"></i>
-                <h3>Strava Integration</h3>
-                <p>Share and sync your routes</p>
-            </div>
-        </section>
-
-        <section class="recent-trails">
-            <h2>Recent Trails</h2>
-            <div class="trail-grid">
-                <!-- Trail cards will be populated by JavaScript -->
-            </div>
-            <a href="routes.html" class="view-all-btn">View All Trails</a>
-        </section>
+        <div class="form-container">
+            <h2>Login to Trail Guides</h2>
+            <form id="loginForm" onsubmit="return validateForm('loginForm')">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div class="form-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="remember"> Remember me
+                    </label>
+                </div>
+                <button type="submit">Login</button>
+                <div class="form-footer">
+                    <p>Don't have an account? <a href="signup.html">Sign up</a></p>
+                    <a href="#forgot-password">Forgot password?</a>
+                </div>
+                <div class="social-login">
+                    <p>Or login with</p>
+                    <div class="social-buttons">
+                        <button type="button" class="strava-btn">
+                            <i class="fab fa-strava"></i> Strava
+                        </button>
+                        <button type="button" class="google-btn">
+                            <i class="fab fa-google"></i> Google
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
     </main>
 
     <footer>
+        <!-- Same footer as index.html -->
         <div class="footer-content">
             <div class="footer-section">
                 <h3>Trail Guides</h3>
