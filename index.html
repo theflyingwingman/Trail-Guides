@@ -72,13 +72,32 @@
             </div>
         </section>
 
-        <section class="recent-trails">
-            <h2>Recent Trails</h2>
-            <div class="trail-grid">
-                <!-- Trail cards will be populated by JavaScript -->
+        <!-- Add this section after the features section -->
+<section class="recent-trails">
+    <div class="section-header">
+        <h2>Recent Trails</h2>
+        <a href="routes.html" class="view-all">View All Trails</a>
+    </div>
+    <div class="trails-grid">
+        <div class="trail-card">
+            <div class="trail-image">
+                <img src="https://images.unsplash.com/photo-1596688056059-a08f88f080d4?q=80&w=2874&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Trail">
+                <div class="trail-difficulty moderate">Moderate</div>
             </div>
-            <a href="routes.html" class="view-all-btn">View All Trails</a>
-        </section>
+            <div class="trail-content">
+                <h3>Mount Baker Trail</h3>
+                <p class="trail-location"><i class="fas fa-map-marker-alt"></i> Washington</p>
+                <div class="trail-stats">
+                    <span><i class="fas fa-route"></i> 12.5 km</span>
+                    <span><i class="fas fa-mountain"></i> 850m</span>
+                </div>
+            </div>
+        </div>
+        <!-- Repeat trail-card structure for other trails -->
+    </div>
+</section>
+
+        
     </main>
 
     <footer>
