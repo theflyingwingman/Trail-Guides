@@ -106,3 +106,46 @@ function validateForm(formId) {
         }
     });
 }
+
+// Add this to your script.js
+document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const navWrapper = document.querySelector('.nav-wrapper');
+    const dropdowns = document.querySelectorAll('.dropdown');
+
+    // Toggle mobile menu
+    mobileMenuBtn.addEventListener('click', function() {
+        this.classList.toggle('active');
+        navWrapper.classList.toggle('active');
+        document.body.classList.toggle('no-scroll');
+    });
+
+    // Handle dropdowns in mobile view
+    dropdowns.forEach(dropdown => {
+        const dropBtn = dropdown.querySelector('.dropbtn');
+        dropBtn.addEventListener('click', function(e) {
+            if (window.innerWidth <= 768) {
+                e.preventDefault();
+                dropdown.classList.toggle('active');
+            }
+        });
+    });
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!navWrapper.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+            mobileMenuBtn.classList.remove('active');
+            navWrapper.classList.remove('active');
+            document.body.classList.remove('no-scroll');
+        }
+    });
+
+    // Close mobile menu when window is resized above mobile breakpoint
+    window.addEventListener('resize', function() {
+        if (window.innerWidth > 768) {
+            mobileMenuBtn.classList.remove('active');
+            navWrapper.classList.remove('active');
+            document.body.classList.remove('no-scroll');
+        }
+    });
+});
